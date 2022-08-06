@@ -1,36 +1,5 @@
 # Q-Manager
-A questionnaire manager library.
-
-## Structure 
-
-A questionnaire has the following structure:
- - Questionnaire
- - QuestionnaireGroup
- - Group
- - GroupSection
- - Section
- - SectionQuestion
- - Question
-
-## Description
-
-Every question can be translated in different languages thanks to the Translation table.
- 
-A Questionnaire consists of one or more groups. A group consists of one or more sections and a section consists of one or more questions.
-
-This subdivision allows you to enter a title and a help text at the questionnaire, group or section level.
-
-At the graphic level, a questionnaire is a set of tabs. A group is represented by a tab and a section is a set of questions.
-
-Each group, section or question has an order with respect to its parent. Therefore the groups can be ordered on the basis of the order property of the relationship table between the questionnaire and the group. The same logic applies to the section and to the questions.
-
-## Technologies
-- Spring boot
-- Hibernate
-- Liquibase
-- Mapstruct
-- Docker
-- (JDK 17)
+A console manager for the [questionnaire manager core](http://www.github.com) library .
 
 ## Command line
 Q-Manager can be used from the command line. The commands are the followings:
@@ -69,6 +38,13 @@ To list all questionnaires:
 
 	questionnaire list LANGUAGE_CODE
 	
+To retrieve a single questionnaire:
+	
+	questionnaire single QUESTIONNAIRE_CODE LANGUAGE_CODE	
+	
+Where:
+ - `QUESTIONNAIRE_CODE` is the questionnaire code found on DB		
+	
 To delete a questionnaire
 	
 	questionnaire delete QUESTIONNAIRE_CODE	
@@ -95,6 +71,13 @@ To update a group:
 To list all groups:
 
 	group list LANGUAGE_CODE
+	
+To retrieve a single group:
+	
+	group single GROUP_CODE LANGUAGE_CODE	
+	
+Where:
+ - `GROUP_CODE` is the group code found on DB		
 	
 To delete a group
 	
@@ -123,13 +106,16 @@ To list all sections:
 
 	section list LANGUAGE_CODE
 	
+To retrieve a single section:
+	
+	section single SECTION_CODE LANGUAGE_CODE	
+	
+Where:
+ - `SECTION_CODE` is the section code found on DB			
+	
 To delete a section
 	
 	section delete SECTION_CODE	
 	
 Where:
  - `SECTION_CODE` is the section code found on DB	  
-
-## Here is the DB schema:
-
-<img alt="Q-Manager Schema" src="./questionnaire-manager-schema.png" />
