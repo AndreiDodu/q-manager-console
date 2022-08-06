@@ -1,4 +1,4 @@
-package com.andreidodu.qm.console.util;
+package com.andreidodu.qm.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

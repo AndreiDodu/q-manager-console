@@ -1,4 +1,4 @@
-package com.andreidodu.qm.console.commands;
+package com.andreidodu.qm.commands;
 
 import java.util.Map;
 

@@ -1,15 +1,15 @@
-package com.andreidodu.qm.console.commands.section;
+package com.andreidodu.qm.commands.section;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.andreidodu.qm.console.commands.Command;
-import com.andreidodu.qm.console.constants.ConsoleConstants;
-import com.andreidodu.qm.console.util.ConsoleUtil;
+import com.andreidodu.qm.commands.Command;
+import com.andreidodu.qm.constants.ConsoleConstants;
 import com.andreidodu.qm.dto.input.SectionInsert;
 import com.andreidodu.qm.service.SectionService;
+import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
 public class CommandSectionUpdate implements Command {

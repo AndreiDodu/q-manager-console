@@ -1,17 +1,17 @@
-package com.andreidodu.qm.console.commands.group;
+package com.andreidodu.qm.commands.group;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.andreidodu.qm.console.commands.Command;
-import com.andreidodu.qm.console.constants.ConsoleConstants;
-import com.andreidodu.qm.console.util.ConsoleUtil;
-import com.andreidodu.qm.console.util.QuestionnaireUtil;
+import com.andreidodu.qm.commands.Command;
+import com.andreidodu.qm.constants.ConsoleConstants;
 import com.andreidodu.qm.dto.Group;
 import com.andreidodu.qm.dto.input.GroupInsert;
 import com.andreidodu.qm.service.GroupService;
+import com.andreidodu.qm.util.ConsoleUtil;
+import com.andreidodu.qm.util.QuestionnaireUtil;
 
 @Component
 public class CommandGroupCreate implements Command{

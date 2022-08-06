@@ -1,14 +1,14 @@
-package com.andreidodu.qm.console.commands.quest;
+package com.andreidodu.qm.commands.quest;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.andreidodu.qm.console.commands.Command;
-import com.andreidodu.qm.console.constants.ConsoleConstants;
-import com.andreidodu.qm.console.util.ConsoleUtil;
+import com.andreidodu.qm.commands.Command;
+import com.andreidodu.qm.constants.ConsoleConstants;
 import com.andreidodu.qm.service.QuestionnaireService;
+import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
 public class CommandQuestionnaireDelete implements Command {

@@ -1,4 +1,4 @@
-package com.andreidodu.qm.console;
+package com.andreidodu.qm;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,9 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.andreidodu.qm.console.commands.Command;
-import com.andreidodu.qm.console.constants.ConsoleConstants;
-import com.andreidodu.qm.console.util.ConsoleUtil;
+import com.andreidodu.qm.commands.Command;
+import com.andreidodu.qm.constants.ConsoleConstants;
+import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
 public class CommandProcessor {

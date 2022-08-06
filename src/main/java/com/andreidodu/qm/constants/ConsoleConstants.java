@@ -1,4 +1,4 @@
-package com.andreidodu.qm.console.constants;
+package com.andreidodu.qm.constants;
 
 public interface ConsoleConstants {
 
