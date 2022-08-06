@@ -1,5 +1,5 @@
 # Q-Manager
-A console manager for the [questionnaire manager core (q-manager-core)](https://github.com/AndreiDodu/q-manager-core) library .
+A console manager for the [q-manager-core](https://github.com/AndreiDodu/q-manager-core) library .
 
 ## Command line
 Q-Manager can be used from the command line. The commands are the followings:
