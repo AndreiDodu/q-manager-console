@@ -12,4 +12,5 @@ public interface ConsoleConstants {
 	public static final int ARG2_COMMAND = 4;
 	public static final int ARG3_COMMAND = 5;
 	public static final int ARG4_COMMAND = 6;
+	public static final int ARG5_COMMAND = 7;
 }
