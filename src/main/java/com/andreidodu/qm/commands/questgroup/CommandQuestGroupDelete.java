@@ -13,7 +13,7 @@ import com.andreidodu.qm.service.common.AssociationCommonService;
 @Component
 public class CommandQuestGroupDelete extends CommandDeleteAssociationCommon<QuestionnaireGroup> implements Command {
 
-	private static final String COMMAND = "questgroupDelete";
+	private static final String COMMAND = "questionnairegroupDelete";
 
 	@Autowired
 	private QuestionnaireGroupService service;

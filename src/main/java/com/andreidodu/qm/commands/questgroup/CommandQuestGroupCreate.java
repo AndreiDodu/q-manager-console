@@ -13,7 +13,7 @@ import com.andreidodu.qm.service.common.AssociationCommonService;
 @Component
 public class CommandQuestGroupCreate extends CommandCreateAssociationCommon<QuestionnaireGroup> implements Command {
 
-	private static final String COMMAND = "questgroupCreate";
+	private static final String COMMAND = "questionnairegroupCreate";
 
 	@Autowired
 	private QuestionnaireGroupService service;
