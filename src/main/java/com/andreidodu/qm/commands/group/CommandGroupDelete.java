@@ -1,17 +1,16 @@
 package com.andreidodu.qm.commands.group;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
-import com.andreidodu.qm.constants.ConsoleConstants;
+import com.andreidodu.qm.commands.common.category.CommandDeleteCategoryCommon;
+import com.andreidodu.qm.dto.Group;
 import com.andreidodu.qm.service.category.GroupService;
-import com.andreidodu.qm.util.ConsoleUtil;
+import com.andreidodu.qm.service.common.CategoryCommonService;
 
 @Component
-public class CommandGroupDelete implements Command {
+public class CommandGroupDelete extends CommandDeleteCategoryCommon<Group> implements Command {
 
 	private static final String COMMAND = "groupDelete";
 
@@ -22,13 +21,10 @@ public class CommandGroupDelete implements Command {
 	public String getCommand() {
 		return COMMAND;
 	}
-
+	
 	@Override
-	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Group deletion selected");
-		String groupCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		Boolean result = this.service.delete(groupCode);
-		System.out.println("==> Group deletion status: " + result);
+	protected CategoryCommonService<Group> getService() {
+		return this.service;
 	}
 
 }

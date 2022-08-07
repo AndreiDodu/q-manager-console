@@ -1,19 +1,16 @@
 package com.andreidodu.qm.commands.questionnaire;
 
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
-import com.andreidodu.qm.constants.ConsoleConstants;
-import com.andreidodu.qm.dto.input.QuestionnaireInsert;
+import com.andreidodu.qm.commands.common.category.CommandListCategoryCommon;
+import com.andreidodu.qm.dto.Questionnaire;
 import com.andreidodu.qm.service.category.QuestionnaireService;
-import com.andreidodu.qm.util.ConsoleUtil;
+import com.andreidodu.qm.service.common.CategoryCommonService;
 
 @Component
-public class CommandQuestionnaireList implements Command {
+public class CommandQuestionnaireList extends CommandListCategoryCommon<Questionnaire> implements Command {
 
 	private static final String COMMAND = "questionnaireList";
 
@@ -26,13 +23,8 @@ public class CommandQuestionnaireList implements Command {
 	}
 
 	@Override
-	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Questionnaire list all");
-		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		List<QuestionnaireInsert> list = this.service.getAll(languageCode);
-		list.forEach(item -> {
-			System.out.println(item);
-		});
+	protected CategoryCommonService<Questionnaire> getService() {
+		return this.service;
 	}
 
 }

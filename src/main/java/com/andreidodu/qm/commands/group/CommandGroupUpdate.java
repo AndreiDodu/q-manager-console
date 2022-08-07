@@ -6,13 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
+import com.andreidodu.qm.commands.common.category.CommandUpdateCategoryCommon;
 import com.andreidodu.qm.constants.ConsoleConstants;
+import com.andreidodu.qm.dto.Group;
 import com.andreidodu.qm.dto.input.GroupInsert;
 import com.andreidodu.qm.service.category.GroupService;
+import com.andreidodu.qm.service.common.CategoryCommonService;
 import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
-public class CommandGroupUpdate implements Command {
+public class CommandGroupUpdate extends CommandUpdateCategoryCommon<Group> implements Command {
 
 	private static final String COMMAND = "groupUpdate";
 
@@ -25,15 +28,8 @@ public class CommandGroupUpdate implements Command {
 	}
 
 	@Override
-	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Group updating selected");
-		String code = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		String title = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG1_COMMAND));
-		String help = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG2_COMMAND));
-		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG3_COMMAND));
-		GroupInsert insertDTO = new GroupInsert(code, title, help, languageCode);
-		GroupInsert dto = this.service.update(insertDTO);
-		System.out.println("==> Group updated: [" + dto + "]");
+	protected CategoryCommonService<Group> getService() {
+		return this.service;
 	}
 
 }

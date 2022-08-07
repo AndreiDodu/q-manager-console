@@ -1,18 +1,16 @@
 package com.andreidodu.qm.commands.section;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
-import com.andreidodu.qm.constants.ConsoleConstants;
-import com.andreidodu.qm.dto.input.SectionInsert;
+import com.andreidodu.qm.commands.common.category.CommandSingleCategoryCommon;
+import com.andreidodu.qm.dto.Section;
 import com.andreidodu.qm.service.category.SectionService;
-import com.andreidodu.qm.util.ConsoleUtil;
+import com.andreidodu.qm.service.common.CategoryCommonService;
 
 @Component
-public class CommandSectionSingle implements Command {
+public class CommandSectionSingle extends CommandSingleCategoryCommon<Section> implements Command {
 
 	private static final String COMMAND = "sectionSingle";
 
@@ -25,12 +23,8 @@ public class CommandSectionSingle implements Command {
 	}
 
 	@Override
-	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Section by code");
-		String code = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG1_COMMAND));
-		SectionInsert item = this.service.getByCode(code, languageCode);
-		System.out.println(item);
+	protected CategoryCommonService<Section> getService() {
+		return this.service;
 	}
 
 }

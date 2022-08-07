@@ -1,18 +1,16 @@
 package com.andreidodu.qm.commands.questionnaire;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
-import com.andreidodu.qm.constants.ConsoleConstants;
-import com.andreidodu.qm.dto.input.QuestionnaireInsert;
+import com.andreidodu.qm.commands.common.category.CommandUpdateCategoryCommon;
+import com.andreidodu.qm.dto.Questionnaire;
 import com.andreidodu.qm.service.category.QuestionnaireService;
-import com.andreidodu.qm.util.ConsoleUtil;
+import com.andreidodu.qm.service.common.CategoryCommonService;
 
 @Component
-public class CommandQuestionnaireUpdate implements Command {
+public class CommandQuestionnaireUpdate extends CommandUpdateCategoryCommon<Questionnaire> implements Command {
 
 	private static final String COMMAND = "questionnaireUpdate";
 
@@ -25,15 +23,8 @@ public class CommandQuestionnaireUpdate implements Command {
 	}
 
 	@Override
-	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Questionnaire updating selected");
-		String code = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		String title = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG1_COMMAND));
-		String help = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG2_COMMAND));
-		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG3_COMMAND));
-		QuestionnaireInsert insertDto = new QuestionnaireInsert(code, title, help, languageCode);
-		QuestionnaireInsert dto = this.service.update(insertDto);
-		System.out.println("==> Questionnaire updated: [" + dto + "]");
+	protected CategoryCommonService<Questionnaire> getService() {
+		return this.service;
 	}
 
 }
