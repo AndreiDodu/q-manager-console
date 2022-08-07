@@ -1,4 +1,4 @@
-# Q-Manager
+# Q-Manager Console
 A console manager for the [q-manager-core](https://github.com/AndreiDodu/q-manager-core) library .
 
 ## Command line
