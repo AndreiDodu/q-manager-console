@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
 import com.andreidodu.qm.constants.ConsoleConstants;
-import com.andreidodu.qm.service.GroupService;
+import com.andreidodu.qm.service.category.GroupService;
 import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component

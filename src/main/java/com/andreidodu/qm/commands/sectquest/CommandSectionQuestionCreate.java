@@ -1,29 +1,29 @@
-package com.andreidodu.qm.commands.questgroup;
+package com.andreidodu.qm.commands.sectquest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
 import com.andreidodu.qm.commands.common.association.CommandCreateAssociationCommon;
-import com.andreidodu.qm.dto.QuestionnaireGroup;
+import com.andreidodu.qm.dto.SectionQuestion;
 import com.andreidodu.qm.dto.input.common.AssociationInsert;
-import com.andreidodu.qm.service.association.QuestionnaireGroupService;
+import com.andreidodu.qm.service.association.SectionQuestionService;
 import com.andreidodu.qm.service.common.AssociationCommonService;
 
 @Component
-public class CommandQuestGroupCreate extends CommandCreateAssociationCommon<QuestionnaireGroup> implements Command {
+public class CommandSectionQuestionCreate extends CommandCreateAssociationCommon<SectionQuestion> implements Command {
 
-	private static final String COMMAND = "questgroupCreate";
+	private static final String COMMAND = "sectionquestionCreate";
 
 	@Autowired
-	private QuestionnaireGroupService service;
+	private SectionQuestionService service;
 
 	@Override
 	public String getCommand() {
 		return COMMAND;
 	}
 
-	protected AssociationCommonService<AssociationInsert, QuestionnaireGroup> getService() {
+	protected AssociationCommonService<AssociationInsert, SectionQuestion> getService() {
 		return this.service;
 	}
 
