@@ -12,7 +12,7 @@ import com.andreidodu.qm.service.common.CategoryCommonService;
 @Component
 public class CommandSectionDelete extends CommandDeleteCategoryCommon<Section> implements Command {
 
-	private static final String COMMAND = "SectionDelete";
+	private static final String COMMAND = "sectionDelete";
 
 	@Autowired
 	private SectionService service;
