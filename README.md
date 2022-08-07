@@ -198,4 +198,33 @@ To retrieve a single SectionQuestion:
 To delete a SectionQuestion
 	
 	sectionquestion delete SECTION_CODE QUESTION_CODE
+	
+#### Create Question
+To create a Question:
+
+	question create TEXT HELP TYPE LANGUAGE_CODE OPTIONS
+	
+Where:
+	 - `TEXT` the question
+	 - `HELP` hrlp text
+	 - `TYPE` question type (textual, numeric etc.). Allowed values are: NUM|TEXT|STR|DATE|MUL
+	 - `LANGUAGE_CODE` language code
+   	 - `OPTIONS` if type is MUL, then here we can define options
+
+To update a Question:
+
+	question update EXISTING_QUESTION_CODE TEXT HELP TYPE LANGUAGE_CODE OPTIONS
+	
+To list all Question records:
+
+	question list LANGUAGE_CODE
+	
+To retrieve a single Question:
+	
+	question single EXISTING_QUESTION_CODE LANGUAGE_CODE
+	
+To delete a Question
+	
+	question delete QUESTION_CODE
+	   	 
 				
