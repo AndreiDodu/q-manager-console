@@ -1,5 +1,6 @@
-package com.andreidodu.qm.commands.quest;
+package com.andreidodu.qm.commands.questionnaire;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,9 @@ import com.andreidodu.qm.service.QuestionnaireService;
 import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
-public class CommandQuestionnaireSingle implements Command {
+public class CommandQuestionnaireList implements Command {
 
-	private static final String COMMAND = "questionnaireSingle";
+	private static final String COMMAND = "questionnaireList";
 
 	@Autowired
 	private QuestionnaireService service;
@@ -26,11 +27,12 @@ public class CommandQuestionnaireSingle implements Command {
 
 	@Override
 	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Questionnaire by code");
-		String code = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG1_COMMAND));
-		QuestionnaireInsert item = this.service.getByCode(code, languageCode);
-		System.out.println(item);
+		System.out.println("==> Questionnaire list all");
+		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
+		List<QuestionnaireInsert> list = this.service.getAll(languageCode);
+		list.forEach(item -> {
+			System.out.println(item);
+		});
 	}
 
 }

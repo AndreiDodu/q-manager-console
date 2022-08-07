@@ -1,4 +1,4 @@
-package com.andreidodu.qm.commands.quest;
+package com.andreidodu.qm.commands.questionnaire;
 
 import java.util.Map;
 

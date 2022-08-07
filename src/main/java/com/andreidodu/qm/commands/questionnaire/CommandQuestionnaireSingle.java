@@ -1,4 +1,4 @@
-package com.andreidodu.qm.commands.quest;
+package com.andreidodu.qm.commands.questionnaire;
 
 import java.util.Map;
 
@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 
 import com.andreidodu.qm.commands.Command;
 import com.andreidodu.qm.constants.ConsoleConstants;
+import com.andreidodu.qm.dto.input.QuestionnaireInsert;
 import com.andreidodu.qm.service.QuestionnaireService;
 import com.andreidodu.qm.util.ConsoleUtil;
 
 @Component
-public class CommandQuestionnaireDelete implements Command {
+public class CommandQuestionnaireSingle implements Command {
 
-	private static final String COMMAND = "questionnaireDelete";
+	private static final String COMMAND = "questionnaireSingle";
 
 	@Autowired
 	private QuestionnaireService service;
@@ -25,10 +26,11 @@ public class CommandQuestionnaireDelete implements Command {
 
 	@Override
 	public void execute(Map<Integer, String> commands) {
-		System.out.println("==> Questionnaire deletion selected");
+		System.out.println("==> Questionnaire by code");
 		String code = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG0_COMMAND));
-		Boolean result = this.service.delete(code);
-		System.out.println("==> Questionnaire deletion status: " + result);
+		String languageCode = ConsoleUtil.processArgument(commands.get(ConsoleConstants.ARG1_COMMAND));
+		QuestionnaireInsert item = this.service.getByCode(code, languageCode);
+		System.out.println(item);
 	}
 
 }
