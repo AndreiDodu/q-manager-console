@@ -18,7 +18,7 @@ To run the application:
 	
 	java -jar q-manager.jar
 	
-#### Create a Questionnaire
+### Create a Questionnaire
 To create a questionnaire:
 
 	questionnaire create TITLE HELP LANGUAGE_CODE
@@ -52,7 +52,7 @@ To delete a questionnaire
 Where:
  - `QUESTIONNAIRE_CODE` is the questionnaire code found on DB	
  
-#### Create a Group
+### Create a Group
 To create a group:
 
 	group create TITLE HELP LANGUAGE_CODE
@@ -86,7 +86,7 @@ To delete a group
 Where:
  - `GROUP_CODE` is the group code found on DB	 
  
-#### Create a Section
+### Create a Section
 To create a section:
 
 	section create TITLE HELP LANGUAGE_CODE
@@ -121,7 +121,7 @@ Where:
  - `SECTION_CODE` is the section code found on DB	  
  
  
-#### Create a Questionnaire-Group association
+### Create a Questionnaire-Group association
 To create a QuestionnaireGroup:
 
 	questionnairegroup create QUESTIONNAIRE_CODE GROUP_CODE ORDER
@@ -147,7 +147,7 @@ To delete a QuestionnaireGroup
 	
 	questionnairegroup delete QUESTIONNAIRE_CODE GROUP_CODE
 	
-#### Create a Group-Section association
+### Create a Group-Section association
 To create a GroupSection:
 
 	groupsection create GROUP_CODE SECTION_CODE ORDER
@@ -173,7 +173,7 @@ To delete a GroupSection
 	
 	groupsection delete GROUP_CODE SECTION_CODE
 		
-#### Create a Section-Question association
+### Create a Section-Question association
 To create a SectionQuestion:
 
 	sectionquestion create SECTION_CODE QUESTION_CODE ORDER
@@ -199,7 +199,7 @@ To delete a SectionQuestion
 	
 	sectionquestion delete SECTION_CODE QUESTION_CODE
 	
-#### Create Question
+### Create Question
 To create a Question:
 
 	question create TEXT HELP TYPE LANGUAGE_CODE OPTIONS
