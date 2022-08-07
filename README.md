@@ -119,3 +119,83 @@ To delete a section
 	
 Where:
  - `SECTION_CODE` is the section code found on DB	  
+ 
+ 
+#### Create a Questionnaire-Group association
+To create a QuestionnaireGroup:
+
+	questionnairegroup create QUESTIONNAIRE_CODE GROUP_CODE ORDER
+
+Where:
+ - `QUESTIONNAIRE_CODE` is the questionnaire code
+ - `GROUP_CODE` is the group code
+ - `ORDER` it the group order 
+
+To update a QuestionnaireGroup:
+
+	questionnairegroup update QUESTIONNAIRE_CODE GROUP_CODE ORDER
+	
+To list all QuestionnaireGroup records:
+
+	questionnairegroup list QUESTIONNAIRE_CODE
+	
+To retrieve a single QuestionnaireGroup:
+	
+	questionnairegroup single QUESTIONNAIRE_CODE GROUP_CODE
+	
+To delete a QuestionnaireGroup
+	
+	questionnairegroup delete QUESTIONNAIRE_CODE GROUP_CODE
+	
+#### Create a Group-Section association
+To create a GroupSection:
+
+	groupsection create GROUP_CODE SECTION_CODE ORDER
+
+Where:
+ - `GROUP_CODE` is the group code
+ - `SECTION_CODE` is the section code
+ - `ORDER` it the section order 
+
+To update a GroupSection:
+
+	groupsection update GROUP_CODE SECTION_CODE ORDER
+	
+To list all GroupSection records:
+
+	groupsection list GROUP_CODE
+	
+To retrieve a single GroupSection:
+	
+	groupsection single GROUP_CODE SECTION_CODE
+	
+To delete a GroupSection
+	
+	groupsection delete GROUP_CODE SECTION_CODE
+		
+#### Create a Section-Question association
+To create a SectionQuestion:
+
+	sectionquestion create SECTION_CODE QUESTION_CODE ORDER
+
+Where:
+ - `SECTION_CODE` is the section code
+ - `QUESTION_CODE` is the question code
+ - `ORDER` it the question order 
+
+To update a SectionQuestion:
+
+	sectionquestion update SECTION_CODE QUESTION_CODE ORDER
+	
+To list all SectionQuestion records:
+
+	sectionquestion list SECTION_CODE
+	
+To retrieve a single SectionQuestion:
+	
+	sectionquestion single SECTION_CODE QUESTION_CODE
+	
+To delete a SectionQuestion
+	
+	sectionquestion delete SECTION_CODE QUESTION_CODE
+				
